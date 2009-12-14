@@ -1,0 +1,30 @@
+Requires robotlegs and swiftsuspenders.
+
+This demo has 5 modules:
+
+- ModuleManager just organises the other modules and provides them with a shared moduleEventDispatcher
+
+- LessonLoaderModule loads and communicates with a swf lesson.
+
+- LessonNavModule gives a simple (play / pause) control to the user.
+
+- LoggingModule handles logging of log events.
+
+- SkinManagerModule loads and provides skin assets for skinnable parts (LessonNavModule's PlayPauseButton is skinnable).
+
+There is also a lesson .swf
+
+In this version the modules are set up to be compiled into a single app. It has also been tested with the modules compiled as individual swfs loaded at runtime and works just the same.
+
+Protocols:
+
+- No module should access anything in the .restricted package of another module.
+- Each module has a module mediator which controls the flow of events from the shared moduleEventDispatcher in and out of the module's own eventDispatcher.
+
+Notes:
+
+Currently the 'skin' (red or blue) loaded for the LessonNavModule is random.
+The lesson path is hardcoded in the LoadLessonCommand rather than passed via an event.
+The lesson communicates with the LessonLoaderModule via the shared events in the loaderContext.
+
+This demo needs to be updated to fit with Shaun's newer version of utilities.modular.
