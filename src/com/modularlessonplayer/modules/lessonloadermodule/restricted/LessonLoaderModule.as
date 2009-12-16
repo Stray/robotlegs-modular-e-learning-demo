@@ -8,13 +8,13 @@
 package com.modularlessonplayer.modules.lessonloadermodule.restricted 
 {
 	
-	import org.robotlegs.utilities.modular.GenericModule;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContextView;
 	import com.modularlessonplayer.modules.lessonloadermodule.restricted.LessonLoaderModuleContext;	
 	
-	public class LessonLoaderModule extends GenericModule 
+	public class LessonLoaderModule extends ModuleContextView 
 	{
 				
-		public function LessonLoaderModule():void
+		public function LessonLoaderModule()
 		{
 			trace("LessonLoaderModule instantiated");
 			context = new LessonLoaderModuleContext(this);

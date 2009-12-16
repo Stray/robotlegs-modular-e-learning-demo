@@ -5,11 +5,14 @@
  * in accordance with the terms of the license agreement accompanying it.
  */
 
-package org.robotlegs.utilities.modular
+package org.robotlegs.utilities.modular.core
 {
 	
 	public interface IModuleContextView
 	{
-		function setModuleDispatcher(dispatcher:ModuleEventDispatcher):void;
+		function setModuleDispatcher(dispatcher:IModuleEventDispatcher):void;
+	
+		function startup():void;
+		
 	}
 }

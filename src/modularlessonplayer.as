@@ -1,8 +1,7 @@
 package {
 	import flash.display.Sprite;
-	import flash.display.DisplayObject;
 	
-	import org.robotlegs.utilities.modular.GenericModule;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContextView;
 	
 	import com.modularlessonplayer.modules.lessonnavmodule.restricted.LessonNavModule;
 	import com.modularlessonplayer.modules.modulemanager.restricted.ModuleManager;
@@ -32,7 +31,7 @@ package {
 			lessonLoader.x = 20;
 			lessonLoader.y = 20;
 			
-			var moduleVector:Vector.<GenericModule> = new Vector.<GenericModule>();
+			var moduleVector:Vector.<ModuleContextView> = new Vector.<ModuleContextView>();
 			moduleVector[moduleVector.length] = navModule;
 			moduleVector[moduleVector.length] = lessonLoader;
 		    moduleVector[moduleVector.length] = skinManager;

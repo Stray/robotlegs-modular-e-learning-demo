@@ -7,14 +7,10 @@
 
 package com.modularlessonplayer.modules.lessonloadermodule.restricted
 {
-	import flash.events.Event;
-	import flash.events.EventDispatcher;
-	import flash.events.MouseEvent;
 	import flash.display.MovieClip;
+	import flash.events.EventDispatcher;
 	
-	import org.robotlegs.utilities.modular.ModuleEventDispatcher;
-	import org.robotlegs.utilities.modular.ModuleCommandMap;
-	import org.robotlegs.mvcs.Mediator;
+	import org.robotlegs.utilities.modular.mvcs.ModuleMediator;
 	
 	import com.modularlessonplayer.modules.lessonloadermodule.restricted.LessonLoaderModule;
 	import com.modularlessonplayer.modules.lessonloadermodule.restricted.controller.PauseLessonCommand;
@@ -25,16 +21,10 @@ package com.modularlessonplayer.modules.lessonloadermodule.restricted
 	import com.modularlessonplayer.modules.lessonnavmodule.api.LessonNavEvent;
 	import com.modularlessonplayer.modules.loggingmodule.api.LoggingEvent; 
 	
-	public class LessonLoaderModuleMediator extends Mediator
+	public class LessonLoaderModuleMediator extends ModuleMediator
 	{
 		[Inject]
 		public var view:LessonLoaderModule;
-		
-		[Inject]
-		public var moduleDispatcher:ModuleEventDispatcher;
-		
-		[Inject]
-		public var moduleCommandMap:ModuleCommandMap;
 		
 		
 		override public function onRegister():void
@@ -42,8 +32,8 @@ package com.modularlessonplayer.modules.lessonloadermodule.restricted
 			moduleCommandMap.mapEvent(LessonNavEvent.PAUSE_LESSON, PauseLessonCommand, LessonNavEvent);
 			moduleCommandMap.mapEvent(LessonNavEvent.PLAY_LESSON, PlayLessonCommand, LessonNavEvent);
 			eventMap.mapListener(eventDispatcher, LessonLoaderEvent.LESSON_LOADED, onLessonLoaded );
-			eventMap.mapListener(eventDispatcher, LessonEvent.LESSON_PAUSED, redispatchLessonEventToModules);
-			eventMap.mapListener(eventDispatcher, LessonEvent.LESSON_PLAY, redispatchLessonEventToModules);
+			eventMap.mapListener(eventDispatcher, LessonEvent.LESSON_PAUSED, redispatchToModules);
+			eventMap.mapListener(eventDispatcher, LessonEvent.LESSON_PLAY, redispatchToModules);
 			
 		}
 		
@@ -55,10 +45,6 @@ package com.modularlessonplayer.modules.lessonloadermodule.restricted
 			
 			view.addChild(lessonView);
 			logMessage("Lesson loaded correctly");
-		}
-		
-		private function redispatchLessonEventToModules(e:LessonEvent):void{
-			moduleDispatcher.dispatchEvent(e);
 		}
 		
 		private function logMessage(msg:String):void{

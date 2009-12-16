@@ -2,17 +2,16 @@ package com.modularlessonplayer.modules.loggingmodule.restricted {
 	
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
-	import org.robotlegs.utilities.modular.GenericModuleContext;
-	import org.robotlegs.utilities.modular.GenericModule;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContext;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContextView;
 	
 	import com.modularlessonplayer.modules.loggingmodule.restricted.services.ILoggingService;
-	import com.modularlessonplayer.modules.loggingmodule.restricted.services.TraceLoggingService;
 	import com.modularlessonplayer.modules.loggingmodule.restricted.services.TextFieldLoggingService;
 	
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	
-	public class LoggingModuleContext extends GenericModuleContext {
+	public class LoggingModuleContext extends ModuleContext {
 		
 		//--------------------------------------------------------------------------
 		//
@@ -31,7 +30,7 @@ package com.modularlessonplayer.modules.loggingmodule.restricted {
 		 *
 		 */
 		
-		public function LoggingModuleContext(contextView:GenericModule) {
+		public function LoggingModuleContext(contextView:ModuleContextView) {
 			
 			// there's no autostartup in this context because the module requires the event dispatcher before you do startup
 			

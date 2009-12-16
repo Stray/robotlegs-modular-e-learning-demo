@@ -3,7 +3,6 @@ package com.modularlessonplayer.modules.lessonnavmodule.restricted.view {
 	import com.modularlessonplayer.modules.lessonnavmodule.restricted.view.PlayPauseButton;
 	
 	import org.robotlegs.mvcs.Mediator;
-	import org.robotlegs.utilities.modular.ModuleEventDispatcher;
 	
 	import flash.events.MouseEvent;
 	import flash.display.Sprite;

@@ -1,9 +1,9 @@
 package com.modularlessonplayer.modules.modulemanager.restricted {
 	
-	import org.robotlegs.utilities.modular.GenericModule;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContextView;
 	import com.modularlessonplayer.modules.modulemanager.restricted.ModuleManagerContext;
 		
-	public class ModuleManager extends GenericModule 
+	public class ModuleManager extends ModuleContextView 
 	{
 		
 		private var moduleManagerContext:ModuleManagerContext;
@@ -20,7 +20,7 @@ package com.modularlessonplayer.modules.modulemanager.restricted {
 						
 		}
 		
-		public function integrateModules(modulesList:Vector.<GenericModule>):void{
+		public function integrateModules(modulesList:Vector.<ModuleContextView>):void{
 			moduleManagerContext.integrateModules(modulesList);
 		}
 	

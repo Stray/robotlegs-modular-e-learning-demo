@@ -1,12 +1,9 @@
 package com.modularlessonplayer.modules.lessonnavmodule.restricted {
 	
-	import flash.display.Shape;
 	
-	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
-	import org.robotlegs.utilities.modular.GenericModuleContext;
-	import org.robotlegs.utilities.modular.GenericModule;
-	import org.robotlegs.utilities.modular.GenericModuleMediator;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContext;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContextView;
 	
 	import com.modularlessonplayer.modules.lessonnavmodule.restricted.LessonNavModule;
 	import com.modularlessonplayer.modules.lessonnavmodule.restricted.LessonNavModuleMediator;
@@ -14,7 +11,7 @@ package com.modularlessonplayer.modules.lessonnavmodule.restricted {
 	import com.modularlessonplayer.modules.lessonnavmodule.restricted.view.PlayPauseButtonMediator;
 	
 	
-	public class LessonNavModuleContext extends GenericModuleContext {
+	public class LessonNavModuleContext extends ModuleContext {
 		
 		//--------------------------------------------------------------------------
 		//
@@ -33,7 +30,7 @@ package com.modularlessonplayer.modules.lessonnavmodule.restricted {
 		 *
 		 */
 		
-		public function LessonNavModuleContext(contextView:GenericModule) {
+		public function LessonNavModuleContext(contextView:ModuleContextView) {
 			
 			// there's no autostartup in this context because the module requires the event dispatcher before you do startup
 			

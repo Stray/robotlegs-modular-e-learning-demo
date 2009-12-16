@@ -2,12 +2,7 @@ package com.modularlessonplayer.modules.lessonnavmodule.restricted.view {
 	
 	import flash.display.Sprite;
 	import flash.display.DisplayObject;
-	import flash.display.MovieClip;
 	import flash.events.Event;
-	import flash.display.Loader;
-	import flash.display.LoaderInfo;
-	import flash.system.LoaderContext;
-	import mx.core.MovieClipAsset;
 	
 	import com.modularlessonplayer.modules.common.ISkinnableView;
 	

@@ -83,7 +83,6 @@ package com.modularlessonplayer.modules.skinmanagermodule.restricted.services {
 		private function onSwfLoadComplete(e:Event):void{
 			trace("onSwfLoadComplete");
 			var loaderInfoObj:LoaderInfo = e.target as LoaderInfo;
-			var contentMCTest:* = loaderInfoObj.content;
 			var contentMC:ISkinFla = loaderInfoObj.content as ISkinFla;
 			var skinArray:Array = contentMC.getAssetsList();
 			var skinLoadedEvent:SkinLoadedEvent = new SkinLoadedEvent(SkinLoadedEvent.SKIN_LOADED, skinArray, skinSourceName);

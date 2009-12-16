@@ -3,7 +3,6 @@ package com.modularlessonplayer.modules.lessonloadermodule.restricted.view {
 	import flash.display.MovieClip;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
-	import com.modularlessonplayer.modules.lessonloadermodule.api.LessonEvent;
 	
 	public class LessonView extends MovieClip {
 		 

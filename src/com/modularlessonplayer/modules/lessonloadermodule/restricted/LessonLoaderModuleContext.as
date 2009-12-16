@@ -10,8 +10,8 @@ package com.modularlessonplayer.modules.lessonloadermodule.restricted
 	
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
-	import org.robotlegs.utilities.modular.GenericModuleContext;
-	import org.robotlegs.utilities.modular.GenericModule;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContext;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContextView;
 	
 	import com.modularlessonplayer.modules.lessonloadermodule.restricted.LessonLoaderModuleMediator;
 	import com.modularlessonplayer.modules.lessonloadermodule.restricted.controller.LoadLessonCommand;
@@ -21,7 +21,7 @@ package com.modularlessonplayer.modules.lessonloadermodule.restricted
 
 	
 	
-	public class LessonLoaderModuleContext extends GenericModuleContext 
+	public class LessonLoaderModuleContext extends ModuleContext 
 	{
 		
 		//--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ package com.modularlessonplayer.modules.lessonloadermodule.restricted
 		 *
 		 */
 		
-		public function LessonLoaderModuleContext(contextView:GenericModule) 
+		public function LessonLoaderModuleContext(contextView:ModuleContextView) 
 		{
 			
 			// there's no autostartup in this context because the module requires the event dispatcher before you do startup

@@ -7,24 +7,18 @@
 
 package com.modularlessonplayer.modules.skinmanagermodule.restricted
 {
-	import flash.events.Event;
-	import flash.events.MouseEvent;
 	
-	import org.robotlegs.utilities.modular.ModuleEventDispatcher;
-	import org.robotlegs.mvcs.Mediator;
+	import org.robotlegs.utilities.modular.mvcs.ModuleMediator;
 	
 	import com.modularlessonplayer.modules.skinmanagermodule.restricted.SkinManagerModule;
 	import com.modularlessonplayer.modules.skinmanagermodule.restricted.events.SkinLoadedEvent;
 	import com.modularlessonplayer.modules.skinmanagermodule.api.SkinChangeEvent;
 	import com.modularlessonplayer.modules.loggingmodule.api.LoggingEvent;
 	
-	public class SkinManagerModuleMediator extends Mediator
+	public class SkinManagerModuleMediator extends ModuleMediator
 	{
 		[Inject]
 		public var view:SkinManagerModule;
-		
-		[Inject]
-		public var moduleDispatcher:ModuleEventDispatcher;
 		
 		override public function onRegister():void
 		{

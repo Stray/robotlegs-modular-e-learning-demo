@@ -7,13 +7,9 @@
 
 package com.modularlessonplayer.modules.lessonnavmodule.restricted
 {
-	import flash.events.Event;
-	import flash.events.MouseEvent;
 	
-	import org.robotlegs.utilities.modular.ModuleEventDispatcher;
-	import org.robotlegs.utilities.modular.ModuleCommandMap;
+	import org.robotlegs.utilities.modular.mvcs.ModuleMediator;
 	
-	import org.robotlegs.mvcs.Mediator;
 	
 	import com.modularlessonplayer.modules.lessonnavmodule.restricted.LessonNavModule;
 	import com.modularlessonplayer.modules.lessonnavmodule.api.LessonNavEvent;
@@ -22,16 +18,10 @@ package com.modularlessonplayer.modules.lessonnavmodule.restricted
 	
 	import com.modularlessonplayer.modules.loggingmodule.api.LoggingEvent;	
 	
-	public class LessonNavModuleMediator extends Mediator
+	public class LessonNavModuleMediator extends ModuleMediator
 	{
 		[Inject]
 		public var view:LessonNavModule;
-		
-		[Inject]
-		public var moduleDispatcher:ModuleEventDispatcher;
-		
-		[Inject]
-		public var moduleCommandMap:ModuleCommandMap;
 		
 		override public function onRegister():void
 		{
@@ -44,14 +34,6 @@ package com.modularlessonplayer.modules.lessonnavmodule.restricted
 		}
 		
 	    
-		private function redispatchToModules(e:Event):void{
-			moduleDispatcher.dispatchEvent(e);
-		}
-		
-		private function redispatchInternally(e:Event):void{
-			eventDispatcher.dispatchEvent(e);
-		}
-		
 		
 	}
 }

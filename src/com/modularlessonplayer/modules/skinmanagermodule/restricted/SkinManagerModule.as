@@ -1,21 +1,18 @@
 package com.modularlessonplayer.modules.skinmanagermodule.restricted {
 	
-	import org.robotlegs.utilities.modular.GenericModule;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContextView;
 	
 	import flash.display.Sprite;
-	import flash.utils.Dictionary;
-	import flash.display.DisplayObject;
 	
 	import com.modularlessonplayer.modules.common.ISkinProvider;
-	import com.modularlessonplayer.modules.common.ISkinnableView;
 	
 	
-	public class SkinManagerModule extends GenericModule implements ISkinProvider 
+	public class SkinManagerModule extends ModuleContextView implements ISkinProvider 
 	{
 				
 		private var _assetsList:Array;
 		
-		public function SkinManagerModule():void
+		public function SkinManagerModule()
 		{
 			trace("SkinManagerModule instantiated");
 			context = new SkinManagerModuleContext(this);

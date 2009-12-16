@@ -2,19 +2,17 @@ package com.modularlessonplayer.modules.modulemanager.restricted {
 	
 	import flash.display.DisplayObjectContainer;
 	
-	import org.robotlegs.base.ContextEvent;
-	import org.robotlegs.core.IMediatorMap;
 	import org.robotlegs.mvcs.Context;
 	
-	import org.robotlegs.utilities.modular.GenericModuleContext;
-	import org.robotlegs.utilities.modular.ModuleEventDispatcher;
-	import org.robotlegs.utilities.modular.GenericModule;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContext;
+	import org.robotlegs.utilities.modular.base.ModuleEventDispatcher;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContextView;
 	
 	import __AS3__.vec.Vector;
 	
   	
 	
-	public class ModuleManagerContext extends GenericModuleContext {
+	public class ModuleManagerContext extends ModuleContext {
 		
 		//private var _modulesList:Vector.<Context>;
 		
@@ -36,7 +34,7 @@ package com.modularlessonplayer.modules.modulemanager.restricted {
 		 *
 		 */
 		
-		public function ModuleManagerContext(contextView:GenericModule) {
+		public function ModuleManagerContext(contextView:ModuleContextView) {
 			
 			super(contextView);
 			
@@ -86,8 +84,8 @@ package com.modularlessonplayer.modules.modulemanager.restricted {
 		}
 		
 		
-		public function integrateModules(modulesList:Vector.<GenericModule>):void{
-			for each (var nextModule:GenericModule in modulesList){
+		public function integrateModules(modulesList:Vector.<ModuleContextView>):void{
+			for each (var nextModule:ModuleContextView in modulesList){
 				trace("nextModule = " + nextModule);
 				
 				nextModule.setModuleDispatcher(_moduleEventDispatcher);

@@ -2,15 +2,14 @@ package com.modularlessonplayer.modules.skinmanagermodule.restricted {
 	
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
-	import org.robotlegs.utilities.modular.GenericModuleContext;
-	import org.robotlegs.utilities.modular.GenericModule;
-	import org.robotlegs.utilities.modular.GenericModuleMediator;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContext;
+	import org.robotlegs.utilities.modular.mvcs.ModuleContextView;
 	
 	import com.modularlessonplayer.modules.skinmanagermodule.restricted.SkinManagerModuleMediator;
 	import com.modularlessonplayer.modules.skinmanagermodule.restricted.controller.LoadSkinCommand;
 	import com.modularlessonplayer.modules.skinmanagermodule.restricted.services.SkinLoaderService;
 	
-	public class SkinManagerModuleContext extends GenericModuleContext {
+	public class SkinManagerModuleContext extends ModuleContext {
 		
 		//--------------------------------------------------------------------------
 		//
@@ -29,7 +28,7 @@ package com.modularlessonplayer.modules.skinmanagermodule.restricted {
 		 *
 		 */
 		
-		public function SkinManagerModuleContext(contextView:GenericModule) {
+		public function SkinManagerModuleContext(contextView:ModuleContextView) {
 			
 			// there's no autostartup in this context because the module requires the event dispatcher before you do startup
 			
